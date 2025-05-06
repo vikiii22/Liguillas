@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Equipos from "./components/EquiposList";
 import Partidos from "./components/PartidosList";
 import JugadoresList from "./components/JugadoresList";
+import ClasificacionList from "./components/ClasificacionList";
 
 function App() {
   const [titulo, setTitulo] = useState("Liguilla");
@@ -27,11 +28,13 @@ function App() {
           <Link to="/equipos">Equipos</Link>
           <Link to="/partidos">Partidos</Link>
           <Link to="/jugadores">Jugadores</Link>
+          <Link to="/clasificacion">Clasificación</Link>
         </nav>
         <Routes>
           <Route path="/equipos" element={<Equipos />} />
           <Route path="/partidos" element={<Partidos />} />
           <Route path="/jugadores" element={<JugadoresList />} />
+          <Route path="/clasificacion" element={<ClasificacionList />} />
           <Route path="*" element={<Partidos />} />
         </Routes>
       </Router>

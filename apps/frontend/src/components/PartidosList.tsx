@@ -16,6 +16,7 @@ type Equipo = {
 type Partido = {
   equipoLocal: Equipo;
   equipoVisitante: Equipo;
+  resultado?: string;
   // otros campos si los necesitas
 };
 
@@ -75,7 +76,11 @@ export default function Partidos() {
                     ))}
                   </div>
                 </td>
-                <td style={{ textAlign: "center", fontWeight: "bold" }}>vs</td>
+                <td style={{ textAlign: "center", fontWeight: "bold" }}>
+                  {p.resultado !== null && p.resultado !== undefined && p.resultado !== ""
+                    ? p.resultado
+                    : "vs"}
+                </td>
                 <td style={{ textAlign: "left", padding: 8 }}>
                   <div style={{ fontWeight: "bold" }}>{p.equipoVisitante?.nombre}</div>
                   <div style={{ fontSize: "0.8em", color: "#666" }}>

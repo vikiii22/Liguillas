@@ -4,6 +4,7 @@ const PartidoSchema = new Schema({
   equipoLocalId: String,
   equipoVisitanteId: String,
   idLiguilla: String,
+  resultado: String,
 });
 
 const JornadaSchema = new Schema({

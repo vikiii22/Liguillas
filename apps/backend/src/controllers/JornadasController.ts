@@ -27,6 +27,7 @@ export const getJornadasByLiguilla = async (req: Request, res: Response) => {
         const equipoVisitante = equiposMap.get(partido.equipoVisitanteId);
         return {
           ...partido,
+          resultado: partido.resultado ?? null,
           equipoLocal: {
             ...equipoLocal,
             jugadores: jugadoresPorEquipo[partido.equipoLocalId] || []

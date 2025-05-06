@@ -1,12 +1,8 @@
 import { Router } from "express";
-import Liguilla from "../models/Liguilla";
+import { getTitulo } from "../controllers/LiguillaController";
 
 const router = Router();
 
-
-router.get("/titulo/:id", async (req, res) => {
-  const liguilla = await Liguilla.findOne({ id: req.params.id }, { name: 1 });
-  res.json({ titulo: liguilla?.name || "Sin título" });
-});
+router.get("/titulo/:id", getTitulo);
 
 export default router;
